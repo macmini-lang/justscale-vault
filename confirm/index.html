@@ -8,28 +8,49 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../shared.css?v=20260407k">
     <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #FFFFFF;
+            color: #111111;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+        a { color: #111111; text-decoration: none; }
+
+        /* DOT GRID — same as shared.css */
+        .bg-dots {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            pointer-events: none;
+            background-image: radial-gradient(circle, rgba(0,0,0,0.12) 1.2px, transparent 1.2px);
+            background-size: 32px 32px;
+            opacity: 1;
+        }
+
+        .page-content { position: relative; z-index: 1; }
         .container { max-width: 720px; margin: 0 auto; padding: 0 20px; }
 
         /* NAV */
-        .nav { padding: 18px 0; border-bottom: 2px solid rgba(0,0,0,0.08); }
-        .nav .container { display: flex; align-items: center; justify-content: space-between; }
-        .nav img { height: 44px; width: auto; }
-        .nav-label { font-size: 0.7rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #555555; }
+        .confirm-nav { padding: 18px 0; border-bottom: 2px solid rgba(0,0,0,0.08); }
+        .confirm-nav .container { display: flex; align-items: center; justify-content: space-between; }
+        .confirm-nav img { height: 44px; width: auto; }
+        .confirm-nav .nav-label { font-size: 0.7rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #555555; }
 
         /* HERO */
-        .hero {
+        .confirm-hero {
             text-align: center;
             padding: 60px 0 40px;
             border-bottom: 2px solid rgba(0,0,0,0.08);
         }
-        .hero h1 {
+        .confirm-hero h1 {
             font-size: clamp(24px, 5vw, 32px);
             font-weight: 700;
             margin-bottom: 12px;
         }
-        .hero p {
+        .confirm-hero p {
             font-size: clamp(14px, 2.5vw, 18px);
             color: #555555;
             max-width: 600px;
@@ -53,7 +74,7 @@
         }
 
         /* SECTION */
-        .section { padding: 40px 0; border-bottom: 2px solid rgba(0,0,0,0.08); }
+        .confirm-section { padding: 40px 0; border-bottom: 2px solid rgba(0,0,0,0.08); }
 
         /* VIDEO PLACEHOLDER */
         .video-placeholder {
@@ -97,7 +118,6 @@
             padding: 6px 0;
             line-height: 1.6;
         }
-        .prep-list li strong { color: #111111; font-weight: 700; }
 
         /* TWO COLUMN VIDEOS */
         .two-col {
@@ -114,7 +134,7 @@
             line-height: 1.4;
         }
 
-        /* FAQ ROW: question + video side by side */
+        /* FAQ ROW */
         .faq-row {
             display: flex;
             align-items: center;
@@ -122,30 +142,24 @@
             border-bottom: 2px solid rgba(0,0,0,0.03);
         }
         .faq-row:last-child { border-bottom: none; }
-        .faq-row .faq-title {
-            flex: 1;
-            padding: 0 20px;
-        }
+        .faq-row .faq-title { flex: 1; padding: 0 20px; }
         .faq-row .faq-title h3 {
             font-size: clamp(13px, 2.2vw, 16px);
             font-weight: 600;
             line-height: 1.4;
             text-align: center;
         }
-        .faq-row .faq-video {
-            flex: 1;
-            padding: 0 10px;
-        }
+        .faq-row .faq-video { flex: 1; padding: 0 10px; }
 
         /* FOOTER */
-        .footer {
+        .confirm-footer {
             background: #000000;
             padding: 24px 0;
             text-align: center;
             margin-top: 40px;
         }
-        .footer img { height: 28px; width: auto; margin-bottom: 8px; }
-        .footer p { font-size: 0.68rem; color: rgba(255,255,255,0.35); }
+        .confirm-footer img { height: 28px; width: auto; margin-bottom: 8px; }
+        .confirm-footer p { font-size: 0.68rem; color: rgba(255,255,255,0.35); }
 
         @media (max-width: 768px) {
             .faq-row { flex-direction: column; }
@@ -154,8 +168,8 @@
         }
         @media (max-width: 600px) {
             .container { padding: 0 16px; }
-            .hero { padding: 40px 0 30px; }
-            .section { padding: 32px 0; }
+            .confirm-hero { padding: 40px 0 30px; }
+            .confirm-section { padding: 32px 0; }
             .two-col { flex-direction: column; }
             .two-col .col { margin-bottom: 24px; }
         }
@@ -163,27 +177,27 @@
 </head>
 <body>
 
-    <!-- NAV -->
-    <nav class="nav">
+<div class="bg-dots"></div>
+<div class="page-content">
+
+    <nav class="confirm-nav">
         <div class="container">
             <a href="../"><img src="../logo.png" alt="JustScale"></a>
             <span class="nav-label">Confirmed</span>
         </div>
     </nav>
 
-    <!-- HERO -->
-    <div class="hero">
+    <div class="confirm-hero">
         <div class="container">
             <h1>Your call has been confirmed.</h1>
             <p>Watch the video below for your next steps.</p>
         </div>
     </div>
 
-    <!-- STEP 1: CONFIRMATION VIDEO -->
-    <div class="section">
+    <div class="confirm-section">
         <div class="container">
             <div class="step-heading">
-                <h2><strong>STEP 1:</strong> Watch This Video</h2>
+                <h2>Step 1 — Watch this video</h2>
             </div>
             <div class="video-placeholder">
                 <span>CONFIRMATION VIDEO PLACEHOLDER</span>
@@ -191,15 +205,13 @@
         </div>
     </div>
 
-    <!-- PHONE CTA -->
     <div class="phone-cta">
         <div class="container">
-            <p>Questions? Text me directly at <a href="tel:+1XXXXXXXXXX"><strong>(XXX) XXX-XXXX</strong></a></p>
+            <p>Questions? Text me directly at <a href="tel:+1XXXXXXXXXX">(XXX) XXX-XXXX</a></p>
         </div>
     </div>
 
-    <!-- PREP BULLETS -->
-    <div class="section">
+    <div class="confirm-section">
         <div class="container">
             <ul class="prep-list">
                 <li>Show up on time. We run a tight schedule.</li>
@@ -209,53 +221,51 @@
         </div>
     </div>
 
-    <!-- STEP 2: YOUTUBE CONTENT -->
-    <div class="section">
+    <div class="confirm-section">
         <div class="container">
             <div class="step-heading">
-                <h2><strong>STEP 2:</strong> Watch These Before Your Call</h2>
+                <h2>Step 2 — Watch these before your call</h2>
             </div>
 
             <div class="two-col">
                 <div class="col">
-                    <div class="video-placeholder"><span>YT VIDEO PLACEHOLDER</span></div>
+                    <div class="video-placeholder"><span>VIDEO PLACEHOLDER</span></div>
                     <h3>How we scale info products with paid ads</h3>
                 </div>
                 <div class="col">
-                    <div class="video-placeholder"><span>YT VIDEO PLACEHOLDER</span></div>
+                    <div class="video-placeholder"><span>VIDEO PLACEHOLDER</span></div>
                     <h3>What a typical ad budget looks like at $50k/mo+</h3>
                 </div>
             </div>
 
             <div class="two-col">
                 <div class="col">
-                    <div class="video-placeholder"><span>YT VIDEO PLACEHOLDER</span></div>
+                    <div class="video-placeholder"><span>VIDEO PLACEHOLDER</span></div>
                     <h3>How to sign high-ticket clients from paid ads</h3>
                 </div>
                 <div class="col">
-                    <div class="video-placeholder"><span>YT VIDEO PLACEHOLDER</span></div>
+                    <div class="video-placeholder"><span>VIDEO PLACEHOLDER</span></div>
                     <h3>The 2 pillars that determine if your info product scales</h3>
                 </div>
             </div>
 
             <div class="two-col">
                 <div class="col">
-                    <div class="video-placeholder"><span>YT VIDEO PLACEHOLDER</span></div>
+                    <div class="video-placeholder"><span>VIDEO PLACEHOLDER</span></div>
                     <h3>How to launch high-ticket info into paid ads</h3>
                 </div>
                 <div class="col">
-                    <div class="video-placeholder"><span>YT VIDEO PLACEHOLDER</span></div>
+                    <div class="video-placeholder"><span>VIDEO PLACEHOLDER</span></div>
                     <h3>Scaling a sales team past $200k/mo with paid traffic</h3>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- STEP 3: FAQ BREAKOUT VIDEOS -->
-    <div class="section">
+    <div class="confirm-section">
         <div class="container">
             <div class="step-heading">
-                <h2><strong>STEP 3:</strong> Common Questions Answered Before Your Call</h2>
+                <h2>Step 3 — Common questions answered</h2>
             </div>
 
             <div class="faq-row">
@@ -296,14 +306,12 @@
         </div>
     </div>
 
-    <!-- FOOTER -->
-    <div class="footer">
+    <div class="confirm-footer">
         <img src="../logo-white.png" alt="JustScale">
         <p>&copy; 2026 JustScale. All rights reserved.</p>
     </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<script src="../shared.js?v=20260407b"></script>
+</div>
+
 </body>
 </html>
