@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Call Confirmed | The Vault</title>
+    <meta name="description" content="Your call has been confirmed. Watch the videos below before your session.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #FFFFFF;
+            color: #111111;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+        a { color: #111111; text-decoration: none; }
+        .container { max-width: 720px; margin: 0 auto; padding: 0 20px; }
+
+        /* NAV */
+        .nav { padding: 18px 0; text-align: center; border-bottom: 2px solid rgba(0,0,0,0.08); }
+        .nav img { height: 44px; width: auto; }
+
+        /* HERO */
+        .hero {
+            text-align: center;
+            padding: 60px 0 40px;
+            border-bottom: 2px solid rgba(0,0,0,0.08);
+        }
+        .hero h1 {
+            font-size: clamp(24px, 5vw, 32px);
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+        .hero p {
+            font-size: clamp(14px, 2.5vw, 18px);
+            color: #555555;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* STEP HEADING */
+        .step-heading {
+            background: #111111;
+            color: #FFFFFF;
+            border: none;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .step-heading h2 {
+            font-size: clamp(16px, 3vw, 20px);
+            font-weight: 700;
+            line-height: 1.3;
+            color: #FFFFFF;
+        }
+
+        /* SECTION */
+        .section { padding: 40px 0; border-bottom: 2px solid rgba(0,0,0,0.08); }
+        .section:last-of-type { border-bottom: none; }
+
+        /* VIDEO PLACEHOLDER */
+        .video-placeholder {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16/9;
+            background: #111;
+            border-radius: 10px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 16px;
+        }
+        .video-placeholder span {
+            color: rgba(255,255,255,0.4);
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+        }
+
+        /* BULLET LIST */
+        .prep-list {
+            padding: 0 20px 20px;
+            list-style: disc;
+            margin-left: 20px;
+        }
+        .prep-list li {
+            font-size: 14px;
+            color: #555555;
+            padding: 4px 0;
+            line-height: 1.6;
+        }
+        .prep-list li strong { color: #111111; font-weight: 700; }
+
+        /* TWO COLUMN */
+        .two-col {
+            display: flex;
+            gap: 20px;
+            padding: 15px 0;
+        }
+        .two-col .col { flex: 1; }
+        .two-col .col h3 {
+            font-size: clamp(13px, 2.2vw, 16px);
+            font-weight: 600;
+            text-align: center;
+            margin-top: 12px;
+            line-height: 1.4;
+        }
+
+        /* PHONE CTA */
+        .phone-cta {
+            text-align: center;
+            padding: 36px 0;
+            border-bottom: 2px solid rgba(0,0,0,0.08);
+        }
+        .phone-cta p {
+            font-size: clamp(18px, 4vw, 26px);
+            font-weight: 600;
+        }
+
+        /* FOOTER */
+        .footer {
+            background: #000000;
+            padding: 24px 0;
+            text-align: center;
+            margin-top: 40px;
+        }
+        .footer img { height: 28px; width: auto; margin-bottom: 8px; }
+        .footer p {
+            font-size: 0.68rem;
+            color: rgba(255,255,255,0.35);
+        }
+
+        @media (max-width: 600px) {
+            .two-col { flex-direction: column; }
+            .hero { padding: 40px 0 30px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAV -->
+    <div class="nav">
+        <a href="../"><img src="../logo.png" alt="JustScale"></a>
+    </div>
+
+    <!-- HERO -->
+    <div class="hero">
+        <div class="container">
+            <h1>You're confirmed.</h1>
+            <p>Before your call, watch the videos below so we can hit the ground running.</p>
+        </div>
+    </div>
+
+    <!-- STEP 1: MAIN VIDEO -->
+    <div class="section">
+        <div class="container">
+            <div class="step-heading">
+                <h2>Step 1 — Watch this before your call</h2>
+            </div>
+            <div class="video-placeholder">
+                <span>VIDEO PLACEHOLDER</span>
+            </div>
+            <ul class="prep-list">
+                <li><strong>What we'll cover on the call</strong> and how to get the most out of it</li>
+                <li><strong>What to have ready</strong> so we don't waste time on basics</li>
+                <li><strong>What to expect</strong> from the process if we decide to work together</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- STEP 2: BREAKOUT VIDEOS -->
+    <div class="section">
+        <div class="container">
+            <div class="step-heading">
+                <h2>Step 2 — Common questions answered</h2>
+            </div>
+            <div class="two-col">
+                <div class="col">
+                    <div class="video-placeholder">
+                        <span>VIDEO PLACEHOLDER</span>
+                    </div>
+                    <h3>How does the vault actually work?</h3>
+                </div>
+                <div class="col">
+                    <div class="video-placeholder">
+                        <span>VIDEO PLACEHOLDER</span>
+                    </div>
+                    <h3>What results are people getting?</h3>
+                </div>
+            </div>
+            <div class="two-col">
+                <div class="col">
+                    <div class="video-placeholder">
+                        <span>VIDEO PLACEHOLDER</span>
+                    </div>
+                    <h3>What if I'm already running ads?</h3>
+                </div>
+                <div class="col">
+                    <div class="video-placeholder">
+                        <span>VIDEO PLACEHOLDER</span>
+                    </div>
+                    <h3>What if I'm just getting started?</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PHONE CTA -->
+    <div class="phone-cta">
+        <div class="container">
+            <p>Questions before your call? Text us at <a href="tel:+1XXXXXXXXXX"><strong>(XXX) XXX-XXXX</strong></a></p>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+        <img src="../logo-white.png" alt="JustScale">
+        <p>&copy; 2026 JustScale. All rights reserved.</p>
+    </div>
+
+</body>
+</html>
