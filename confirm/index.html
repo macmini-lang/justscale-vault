@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Call Confirmed | The Vault</title>
-    <meta name="description" content="Your call has been confirmed. Watch the videos below before your session.">
+    <meta name="description" content="Your call has been confirmed. Complete the steps below before your session.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -21,8 +21,10 @@
         .container { max-width: 720px; margin: 0 auto; padding: 0 20px; }
 
         /* NAV */
-        .nav { padding: 18px 0; text-align: center; border-bottom: 2px solid rgba(0,0,0,0.08); }
+        .nav { padding: 18px 0; border-bottom: 2px solid rgba(0,0,0,0.08); }
+        .nav .container { display: flex; align-items: center; justify-content: space-between; }
         .nav img { height: 44px; width: auto; }
+        .nav-label { font-size: 0.7rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #555555; }
 
         /* HERO */
         .hero {
@@ -46,7 +48,6 @@
         .step-heading {
             background: #111111;
             color: #FFFFFF;
-            border: none;
             border-radius: 10px;
             padding: 20px;
             text-align: center;
@@ -61,7 +62,6 @@
 
         /* SECTION */
         .section { padding: 40px 0; border-bottom: 2px solid rgba(0,0,0,0.08); }
-        .section:last-of-type { border-bottom: none; }
 
         /* VIDEO PLACEHOLDER */
         .video-placeholder {
@@ -74,7 +74,6 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 16px;
         }
         .video-placeholder span {
             color: rgba(255,255,255,0.4);
@@ -83,21 +82,32 @@
             letter-spacing: 0.05em;
         }
 
+        /* PHONE CTA */
+        .phone-cta {
+            text-align: center;
+            padding: 36px 0;
+            border-bottom: 2px solid rgba(0,0,0,0.08);
+        }
+        .phone-cta p {
+            font-size: clamp(18px, 4vw, 26px);
+            font-weight: 600;
+        }
+
         /* BULLET LIST */
         .prep-list {
-            padding: 0 20px 20px;
             list-style: disc;
             margin-left: 20px;
+            padding: 0 20px 10px;
         }
         .prep-list li {
             font-size: 14px;
             color: #555555;
-            padding: 4px 0;
+            padding: 6px 0;
             line-height: 1.6;
         }
         .prep-list li strong { color: #111111; font-weight: 700; }
 
-        /* TWO COLUMN */
+        /* TWO COLUMN VIDEOS */
         .two-col {
             display: flex;
             gap: 20px;
@@ -112,15 +122,27 @@
             line-height: 1.4;
         }
 
-        /* PHONE CTA */
-        .phone-cta {
-            text-align: center;
-            padding: 36px 0;
-            border-bottom: 2px solid rgba(0,0,0,0.08);
+        /* FAQ ROW: question + video side by side */
+        .faq-row {
+            display: flex;
+            align-items: center;
+            padding: 20px 0;
+            border-bottom: 2px solid rgba(0,0,0,0.03);
         }
-        .phone-cta p {
-            font-size: clamp(18px, 4vw, 26px);
+        .faq-row:last-child { border-bottom: none; }
+        .faq-row .faq-title {
+            flex: 1;
+            padding: 0 20px;
+        }
+        .faq-row .faq-title h3 {
+            font-size: clamp(13px, 2.2vw, 16px);
             font-weight: 600;
+            line-height: 1.4;
+            text-align: center;
+        }
+        .faq-row .faq-video {
+            flex: 1;
+            padding: 0 10px;
         }
 
         /* FOOTER */
@@ -131,82 +153,48 @@
             margin-top: 40px;
         }
         .footer img { height: 28px; width: auto; margin-bottom: 8px; }
-        .footer p {
-            font-size: 0.68rem;
-            color: rgba(255,255,255,0.35);
-        }
+        .footer p { font-size: 0.68rem; color: rgba(255,255,255,0.35); }
 
+        @media (max-width: 768px) {
+            .faq-row { flex-direction: column; }
+            .faq-row .faq-title { margin-bottom: 12px; padding: 0; }
+            .faq-row .faq-video { padding: 0; width: 100%; }
+        }
         @media (max-width: 600px) {
-            .two-col { flex-direction: column; }
+            .container { padding: 0 16px; }
             .hero { padding: 40px 0 30px; }
+            .section { padding: 32px 0; }
+            .two-col { flex-direction: column; }
+            .two-col .col { margin-bottom: 24px; }
         }
     </style>
 </head>
 <body>
 
     <!-- NAV -->
-    <div class="nav">
-        <a href="../"><img src="../logo.png" alt="JustScale"></a>
-    </div>
+    <nav class="nav">
+        <div class="container">
+            <a href="../"><img src="../logo.png" alt="JustScale"></a>
+            <span class="nav-label">Confirmed</span>
+        </div>
+    </nav>
 
     <!-- HERO -->
     <div class="hero">
         <div class="container">
-            <h1>You're confirmed.</h1>
-            <p>Before your call, watch the videos below so we can hit the ground running.</p>
+            <h1>Your call has been confirmed.</h1>
+            <p>Watch the video below for your next steps.</p>
         </div>
     </div>
 
-    <!-- STEP 1: MAIN VIDEO -->
+    <!-- STEP 1: CONFIRMATION VIDEO -->
     <div class="section">
         <div class="container">
             <div class="step-heading">
-                <h2>Step 1 — Watch this before your call</h2>
+                <h2><strong>STEP 1:</strong> Watch This Video</h2>
             </div>
             <div class="video-placeholder">
-                <span>VIDEO PLACEHOLDER</span>
-            </div>
-            <ul class="prep-list">
-                <li><strong>What we'll cover on the call</strong> and how to get the most out of it</li>
-                <li><strong>What to have ready</strong> so we don't waste time on basics</li>
-                <li><strong>What to expect</strong> from the process if we decide to work together</li>
-            </ul>
-        </div>
-    </div>
-
-    <!-- STEP 2: BREAKOUT VIDEOS -->
-    <div class="section">
-        <div class="container">
-            <div class="step-heading">
-                <h2>Step 2 — Common questions answered</h2>
-            </div>
-            <div class="two-col">
-                <div class="col">
-                    <div class="video-placeholder">
-                        <span>VIDEO PLACEHOLDER</span>
-                    </div>
-                    <h3>How does the vault actually work?</h3>
-                </div>
-                <div class="col">
-                    <div class="video-placeholder">
-                        <span>VIDEO PLACEHOLDER</span>
-                    </div>
-                    <h3>What results are people getting?</h3>
-                </div>
-            </div>
-            <div class="two-col">
-                <div class="col">
-                    <div class="video-placeholder">
-                        <span>VIDEO PLACEHOLDER</span>
-                    </div>
-                    <h3>What if I'm already running ads?</h3>
-                </div>
-                <div class="col">
-                    <div class="video-placeholder">
-                        <span>VIDEO PLACEHOLDER</span>
-                    </div>
-                    <h3>What if I'm just getting started?</h3>
-                </div>
+                <span>CONFIRMATION VIDEO PLACEHOLDER</span>
             </div>
         </div>
     </div>
@@ -214,7 +202,112 @@
     <!-- PHONE CTA -->
     <div class="phone-cta">
         <div class="container">
-            <p>Questions before your call? Text us at <a href="tel:+1XXXXXXXXXX"><strong>(XXX) XXX-XXXX</strong></a></p>
+            <p>Questions? Text me directly at <a href="tel:+1XXXXXXXXXX"><strong>(XXX) XXX-XXXX</strong></a></p>
+        </div>
+    </div>
+
+    <!-- PREP BULLETS -->
+    <div class="section">
+        <div class="container">
+            <ul class="prep-list">
+                <li><strong>Punctuality:</strong> Show up on time. We run a tight schedule.</li>
+                <li><strong>Know your numbers:</strong> Revenue, ad spend, cost per acquisition, close rate. The more specific you are, the more specific we can be.</li>
+                <li><strong>Get up to speed:</strong> Watch the videos below so we can skip the basics and spend the call on your business.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- STEP 2: YOUTUBE CONTENT -->
+    <div class="section">
+        <div class="container">
+            <div class="step-heading">
+                <h2><strong>STEP 2:</strong> Watch These Before Your Call</h2>
+            </div>
+
+            <div class="two-col">
+                <div class="col">
+                    <div class="video-placeholder"><span>YT VIDEO PLACEHOLDER</span></div>
+                    <h3>How we scale info products with paid ads</h3>
+                </div>
+                <div class="col">
+                    <div class="video-placeholder"><span>YT VIDEO PLACEHOLDER</span></div>
+                    <h3>What a typical ad budget looks like at $50k/mo+</h3>
+                </div>
+            </div>
+
+            <div class="two-col">
+                <div class="col">
+                    <div class="video-placeholder"><span>YT VIDEO PLACEHOLDER</span></div>
+                    <h3>How to sign high-ticket clients from paid ads</h3>
+                </div>
+                <div class="col">
+                    <div class="video-placeholder"><span>YT VIDEO PLACEHOLDER</span></div>
+                    <h3>The 2 pillars that determine if your info product scales</h3>
+                </div>
+            </div>
+
+            <div class="two-col">
+                <div class="col">
+                    <div class="video-placeholder"><span>YT VIDEO PLACEHOLDER</span></div>
+                    <h3>How to launch high-ticket info into paid ads</h3>
+                </div>
+                <div class="col">
+                    <div class="video-placeholder"><span>YT VIDEO PLACEHOLDER</span></div>
+                    <h3>Scaling a sales team past $200k/mo with paid traffic</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- STEP 3: FAQ BREAKOUT VIDEOS -->
+    <div class="section">
+        <div class="container">
+            <div class="step-heading">
+                <h2><strong>STEP 3:</strong> Common Questions Answered Before Your Call</h2>
+            </div>
+
+            <div class="faq-row">
+                <div class="faq-title"><h3>What's actually inside the vault?</h3></div>
+                <div class="faq-video">
+                    <div class="video-placeholder"><span>VIDEO PLACEHOLDER</span></div>
+                </div>
+            </div>
+
+            <div class="faq-row">
+                <div class="faq-title"><h3>What results are people getting?</h3></div>
+                <div class="faq-video">
+                    <div class="video-placeholder"><span>VIDEO PLACEHOLDER</span></div>
+                </div>
+            </div>
+
+            <div class="faq-row">
+                <div class="faq-title"><h3>What if I'm already running ads?</h3></div>
+                <div class="faq-video">
+                    <div class="video-placeholder"><span>VIDEO PLACEHOLDER</span></div>
+                </div>
+            </div>
+
+            <div class="faq-row">
+                <div class="faq-title"><h3>What if I'm just getting started?</h3></div>
+                <div class="faq-video">
+                    <div class="video-placeholder"><span>VIDEO PLACEHOLDER</span></div>
+                </div>
+            </div>
+
+            <div class="faq-row">
+                <div class="faq-title"><h3>How is this different from a course?</h3></div>
+                <div class="faq-video">
+                    <div class="video-placeholder"><span>VIDEO PLACEHOLDER</span></div>
+                </div>
+            </div>
+
+            <div class="faq-row">
+                <div class="faq-title"><h3>What does the coaching look like?</h3></div>
+                <div class="faq-video">
+                    <div class="video-placeholder"><span>VIDEO PLACEHOLDER</span></div>
+                </div>
+            </div>
+
         </div>
     </div>
 
